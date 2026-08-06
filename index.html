@@ -2,9 +2,53 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>SAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM – Studio für Architektur und Modellbau</title>
+  <meta name="description" content="SAM ist ein Studio für Architektur und Modellbau.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <p>Coming soon.</p>
+<body class="page-landing">
+
+  <div class="landing-bg" style="background-image: url('images/IMG_4229_edited.jpg');"></div>
+
+  <main class="landing-main" id="landing-click">
+    <div class="sam-logo" aria-label="Studio für Architektur und Modellbau">
+      <span class="letter-group"><span class="letter-main">S</span><span class="expand-wrap"><span class="expand">tudio für&nbsp;</span></span></span><span class="letter-group"><span class="letter-main">A</span><span class="expand-wrap"><span class="expand">rchitektur und&nbsp;</span></span></span><span class="letter-group"><span class="letter-main">M</span><span class="expand-wrap"><span class="expand">odellbau</span></span></span>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const wraps = document.querySelectorAll('.expand-wrap');
+
+      // Measure each span's natural width
+      wraps.forEach(el => {
+        el.style.width = 'auto';
+        el.style.overflow = 'visible';
+      });
+      const widths = Array.from(wraps).map(el => el.getBoundingClientRect().width);
+
+      // Collapse back to 0
+      wraps.forEach(el => {
+        el.style.width = '0';
+        el.style.overflow = 'hidden';
+      });
+
+      // Keep "SAM" standing still for 2 seconds before animating
+      setTimeout(() => {
+        wraps.forEach((el, i) => {
+          el.style.transition = 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+          el.style.width = widths[i] + 'px';
+        });
+      }, 2000);
+    });
+
+    document.getElementById('landing-click').addEventListener('click', () => {
+      window.location.href = 'projekte.html';
+    });
+  </script>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </body>
 </html>

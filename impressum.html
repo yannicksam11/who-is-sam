@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – SAM</title>
+  <link href="https://releases.transloadit.com/uppy/v5.2.4/uppy.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <button type="button" class="site-header__link site-header__link--kontakt" data-panel="kontakt">Kontakt</button>
+    <span class="site-header__logo">SAM</span>
+    <button type="button" class="site-header__link site-header__link--about" data-panel="about">About</button>
+  </header>
+
+  <div class="site-panel-backdrop" id="panel-backdrop"></div>
+
+  <aside class="site-panel site-panel--kontakt" id="panel-kontakt" aria-hidden="true">
+    <h2 class="panel-kontakt__heading">Anfrage stellen</h2>
+    <p class="panel-kontakt__intro">Fülle das Formular aus – ich melde mich anschließend mit einem Angebot bei dir.</p>
+
+    <div class="panel-kontakt__hints">
+      <h3 class="panel-kontakt__hints-title">2 konstruktive Hinweise</h3>
+      <ul class="panel-kontakt__hints-list">
+        <li><span class="panel-kontakt__hint-icon" aria-hidden="true">▸</span>Dünnste druckbare Wandstärke: 0,6&nbsp;mm</li>
+        <li><span class="panel-kontakt__hint-icon" aria-hidden="true">▸</span>Überhänge erzwingen Stützstrukturen</li>
+      </ul>
+    </div>
+
+    <form class="panel-kontakt__form" id="kontakt-form" name="kontakt-anfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="kontakt-anfrage">
+      <p style="position: absolute; left: -9999px;" aria-hidden="true">
+        <label>Bitte nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-projektname">Projektname (optional)</label>
+        <input type="text" id="f-projektname" name="Projektname">
+      </div>
+
+      <div class="form-field-row">
+        <div class="form-field">
+          <span class="form-field__label">3D-Datei</span>
+          <div class="upload-dropzone" id="upload-3d"></div>
+          <p class="upload-status" id="upload-3d-status" hidden></p>
+          <input type="hidden" id="f-3d-url" name="3D-Datei-URL" required>
+          <p class="form-field__error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <span class="form-field__label">Foto eines messbaren Referenzmaßes</span>
+          <div class="upload-dropzone" id="upload-foto"></div>
+          <p class="upload-status" id="upload-foto-status" hidden></p>
+          <input type="hidden" id="f-foto-url" name="Referenzfoto-URL" required>
+          <p class="form-field__error" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-massstab">Maßstab des Modells</label>
+        <input type="text" id="f-massstab" name="Massstab" required>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-oberflaeche">Oberflächengüte</label>
+        <select id="f-oberflaeche" name="Oberflaechenguete" required>
+          <option value="">Bitte wählen</option>
+          <option value="Grob">Grob</option>
+          <option value="Standard">Standard</option>
+          <option value="Fein">Fein</option>
+        </select>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <span class="form-field__label">Transluzente Elemente</span>
+        <div class="form-field__radios">
+          <label class="form-field__radio"><input type="radio" name="Transluzent" value="Ja" required> Ja</label>
+          <label class="form-field__radio"><input type="radio" name="Transluzent" value="Nein"> Nein</label>
+        </div>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-anforderungen">Besondere Anforderungen (optional)</label>
+        <textarea id="f-anforderungen" name="Anforderungen" rows="3"></textarea>
+      </div>
+
+      <div class="form-field">
+        <span class="form-field__label">Lieferung</span>
+        <div class="form-field__radios">
+          <label class="form-field__radio"><input type="radio" name="Lieferung" value="Versand" required> Versand</label>
+          <label class="form-field__radio"><input type="radio" name="Lieferung" value="Abholung Koeln"> Abholung in Köln</label>
+        </div>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-name">Vor- und Nachname</label>
+        <input type="text" id="f-name" name="Name" required>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field-row form-field-row--address">
+        <div class="form-field">
+          <label class="form-field__label" for="f-strasse">Straße und Hausnummer</label>
+          <input type="text" id="f-strasse" name="Strasse" required>
+          <p class="form-field__error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="f-plz">PLZ</label>
+          <input type="text" id="f-plz" name="PLZ" required>
+          <p class="form-field__error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field__label" for="f-stadt">Stadt</label>
+          <input type="text" id="f-stadt" name="Stadt" required>
+          <p class="form-field__error" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-email">E-Mail</label>
+        <input type="email" id="f-email" name="Email" required>
+        <p class="form-field__error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="f-telefon">Telefonnummer (optional)</label>
+        <input type="tel" id="f-telefon" name="Telefon">
+      </div>
+
+      <div class="panel-kontakt__action">
+        <p class="panel-kontakt__form-error" id="form-error" hidden></p>
+        <button type="submit" class="panel-kontakt__submit-btn">Anfrage senden</button>
+      </div>
+    </form>
+
+    <p class="panel-kontakt__success" id="form-success" hidden>Danke für deine Anfrage! Ich melde mich mit einem Angebot bei dir.</p>
+  </aside>
+
+  <aside class="site-panel site-panel--about" id="panel-about" aria-hidden="true">
+    <div class="panel-about__top">
+      <p class="panel-about__desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <div class="panel-photo"></div>
+    </div>
+
+    <div class="panel-services">
+      <h3 class="panel-services__title">Leistungen</h3>
+      <div class="panel-accordion">
+        <div class="panel-accordion__item">
+          <button type="button" class="panel-accordion__header" aria-expanded="false">
+            <span>Architektonische Beratung</span>
+            <span class="panel-accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="panel-accordion__content">
+            <p class="panel-accordion__text">Raumkonzepte, Grundrissplanung und architektonische Beratung im gesetzlich zulässigen Rahmen.</p>
+          </div>
+        </div>
+
+        <div class="panel-accordion__item">
+          <button type="button" class="panel-accordion__header" aria-expanded="false">
+            <span>Modellbau</span>
+            <span class="panel-accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="panel-accordion__content">
+            <p class="panel-accordion__text">Handwerkliche Fertigung von Architekturmodellen – präzise, maßstabsgetreu, individuell.</p>
+          </div>
+        </div>
+
+        <div class="panel-accordion__item">
+          <button type="button" class="panel-accordion__header" aria-expanded="false">
+            <span>3D-Druck</span>
+            <span class="panel-accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="panel-accordion__content">
+            <p class="panel-accordion__text">Modelle und Objekte im 3D-Druckverfahren, abgestimmt auf Material, Maßstab und Zweck.</p>
+          </div>
+        </div>
+
+        <div class="panel-accordion__item">
+          <button type="button" class="panel-accordion__header" aria-expanded="false">
+            <span>Alles individuell auf Anfrage</span>
+            <span class="panel-accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="panel-accordion__content">
+            <p class="panel-accordion__text">Jedes Projekt ist anders. Kontaktiere mich und wir besprechen was möglich ist.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="impressum-layout">
+      <h1>Impressum</h1>
+
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        SAM – Studio für Architektur und Modellbau<br>
+        Musterstraße 1<br>
+        00000 Musterstadt
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: +49 000 000 000<br>
+        E-Mail: hallo@sam-studio.de
+      </p>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>
+        Vorname Nachname<br>
+        Musterstraße 1<br>
+        00000 Musterstadt
+      </p>
+
+      <h2>Haftungsausschluss</h2>
+      <p>
+        Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt.
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+        Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+        bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="site-footer__links">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="https://releases.transloadit.com/uppy/v5.2.4/uppy.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+  <script src="js/kontakt-form.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "who-is-sam",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SAM - Studio für Architektur und Modellbau",
+  "scripts": {
+    "build": "node scripts/build-projekte.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
