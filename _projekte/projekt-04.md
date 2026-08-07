@@ -8,5 +8,5 @@ weitereBilder:
   - /images/projekte/9d920c27-7414-4a1d-bdeb-544fe620cb87.jpg
   - /images/projekte/who-is-sam-4.jpg
   - /images/projekte/434d9191-8ddd-4637-a135-a7feadb83587.jpg
-format: quadrat
+format: quer
 ---
