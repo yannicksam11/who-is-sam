@@ -7,5 +7,5 @@ weitereBilder:
   - /images/projekte/5.png
   - /images/projekte/4.png
   - /images/projekte/3.png
-format: hoch
+format: quadrat
 ---
