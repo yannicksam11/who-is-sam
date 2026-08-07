@@ -1,11 +1,11 @@
 ---
-projekt: "Projekt 05"
-massstab: "1:100"
-kunde: "Architekturbüro Muster"
-titelbild: images/platzhalter/projekt-05-titel.jpg
+projekt: Power Paloozas Awards
+massstab: maßstabslos
+kunde: REWE Digital GmbH
+titelbild: /images/projekte/bild_neu.png
 weitereBilder:
-  - bild: images/platzhalter/projekt-05-a.jpg
-  - bild: images/platzhalter/projekt-05-b.jpg
-  - bild: images/platzhalter/projekt-05-c.jpg
+  - /images/projekte/4.png
+  - /images/projekte/3.png
+  - /images/projekte/5.png
 format: quer
 ---
