@@ -246,8 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tiles.forEach((tile) => {
     tile.addEventListener('click', () => {
-      const id = Number(tile.dataset.id);
-      const project = (window.PROJEKTE || []).find((p) => p.id === id);
+      const id = tile.dataset.id;
+      const project = (window.PROJEKTE || []).find((p) => String(p.id) === id);
       if (project) openLightbox(project);
     });
   });
