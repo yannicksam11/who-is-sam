@@ -1,11 +1,11 @@
 ---
-projekt: "Projekt 07"
-massstab: "1:200"
-kunde: "Privat"
-titelbild: images/platzhalter/projekt-07-titel.jpg
+projekt: Power Palooza Award
+massstab: maßstabslos
+kunde: REWE Digital GmbH
+titelbild: /images/projekte/bild_neu.png
 weitereBilder:
-  - bild: images/platzhalter/projekt-07-a.jpg
-  - bild: images/platzhalter/projekt-07-b.jpg
-  - bild: images/platzhalter/projekt-07-c.jpg
+  - /images/projekte/5.png
+  - /images/projekte/4.png
+  - /images/projekte/3.png
 format: hoch
 ---
