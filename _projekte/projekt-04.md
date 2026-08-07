@@ -1,6 +1,6 @@
 ---
 projekt: Vitra.
-massstab: 1:50
+massstab: "1:50 "
 kunde: Studierende
 titelbild: /images/projekte/6af8ff15-7b31-49c9-8206-a14733d500b7.jpg
 weitereBilder:
