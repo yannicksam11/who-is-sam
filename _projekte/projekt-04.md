@@ -1,12 +1,12 @@
 ---
-projekt: "Projekt 04"
-massstab: "1:100"
-kunde: "Privat"
-titelbild: images/platzhalter/projekt-04-titel.jpg
+projekt: Vitra.
+massstab: 1:50
+kunde: Studierende
+titelbild: /images/projekte/6af8ff15-7b31-49c9-8206-a14733d500b7.jpg
 weitereBilder:
-  - bild: images/platzhalter/projekt-04-a.jpg
-  - bild: images/platzhalter/projekt-04-b.jpg
-  - bild: images/platzhalter/projekt-04-c.jpg
-  - bild: images/platzhalter/projekt-04-d.jpg
+  - /images/projekte/7f172b52-0374-4594-86e4-4ab1cc33fcef.jpg
+  - /images/projekte/9d920c27-7414-4a1d-bdeb-544fe620cb87.jpg
+  - /images/projekte/who-is-sam-4.jpg
+  - /images/projekte/434d9191-8ddd-4637-a135-a7feadb83587.jpg
 format: quadrat
 ---
