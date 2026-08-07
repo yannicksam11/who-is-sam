@@ -26,7 +26,9 @@ function readProjekte() {
         kunde: data.kunde || '',
         format: data.format || 'quer',
         titelbild: data.titelbild || '',
-        weitereBilder: (data.weitereBilder || []).map((item) => item.bild).filter(Boolean)
+        weitereBilder: (data.weitereBilder || [])
+          .map((item) => (typeof item === 'string' ? item : item.bild))
+          .filter(Boolean)
       };
     });
 }
